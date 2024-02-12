@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url('./assets/fonts/MontserratAlternates-Regular.ttf');
+    font-weight: 400;
+}
+
+@layer components {
+    .container {
+        @apply mx-auto;
+        width: min(1532px, 100% - 2rem);
+    }
+
+    .link {
+        @apply relative uppercase odd:after:absolute odd:after:-left-2.5 odd:after:w-[3px] odd:after:-inset-y-2 odd:after:bg-[#d9d9d966] odd:after:pointer-events-none;
+    }
+
+    .circle {
+        @apply absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 rounded-full w-6 aspect-square
+        bg-[#735184];
+    }
+
+    .banner-bg {
+        background: linear-gradient(to right, #0000008a 0%, #000 25%, #000 75%, #0000008a 100%), url('./assets/img/home/banner/bg-left.png') 0 0/contain no-repeat, url('./assets/img/home/banner/bg-right.png') 100% 0/contain no-repeat;
+    }
+}
+
+@layer base {
+    html,
+    body {
+        font-family: 'Montserrat Alternates'; 
+    }
+}
